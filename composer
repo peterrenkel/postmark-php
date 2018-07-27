@@ -1,0 +1,17 @@
+<?php
+
+// Import the Postmark Client Class:
+require_once('./vendor/autoload.php');
+use Postmark\PostmarkClient;
+
+$client = new PostmarkClient("542bbdee-5dd2-4191-8ac5-07816d5a56af");
+
+// Send an email:
+$sendResult = $client->sendEmail(
+  "peter.renkel@konftel.co",
+  "peter.renkel@konftel.co",
+  "Hello from Postmark!",
+  "This is just a friendly 'hello' from your friends at Postmark."
+);
+
+?>
